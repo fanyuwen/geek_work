@@ -18,6 +18,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ import java.util.Optional;
 @Slf4j
 @EnableTransactionManagement
 @SpringBootApplication
+@EnableCaching(proxyTargetClass = true)
 @MapperScan("geekwork.spring.bucks.mapper")
 public class GeekworkSpringBucksApplication implements ApplicationRunner {
 

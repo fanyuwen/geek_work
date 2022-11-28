@@ -5,6 +5,7 @@ import geekwork.spring.bucks.model.Coffee;
 import geekwork.spring.bucks.model.CoffeeExample;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ import java.util.Optional;
 
 @Slf4j
 @Service
+@CacheConfig(cacheNames = "coffee")
 public class CoffeeService {
     @Autowired
     private CoffeeMapper coffeeMapper;
